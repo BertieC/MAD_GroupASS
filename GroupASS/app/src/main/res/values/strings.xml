@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">GroupASS</string>
+
+    <array name="type">
+        <item>Rock</item>
+        <item>Hip hop</item>
+        <item>Pop</item>
+    </array>
+
+</resources>
