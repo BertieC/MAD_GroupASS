@@ -113,4 +113,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return types;
     }
+
+    public Cursor getPlaces(String selectedTown, String selectedType){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Table1Name + " WHERE " + T1_Col3 + "='" + selectedTown + "' AND " + T1_Col4 + "='" + selectedType + "';", null);
+        return cursor;
+    }
 }

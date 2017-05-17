@@ -15,6 +15,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     DatabaseHelper db;
+
     Spinner townsSpinner;
     Spinner typeSpinner;
     Button searchButton;
