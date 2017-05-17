@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by BertiePC on 5/16/2017.
  */
@@ -72,9 +75,42 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         }
     }
 
-    public Cursor getAllDataT1(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor result = db.rawQuery("SELECT * FROM " + Table1Name, null);
-        return result;
+
+    public List<String> getAllTownsT1(){
+        List<String> towns = new ArrayList<String>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT DISTINCT " + T1_Col3 + " FROM " + Table1Name, null);
+       // Cursor cursor = db.rawQuery("SELECT DISTINCT * FROM " + Table1Name, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                towns.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return towns;
+    }
+
+    public List<String> getAllTypesT1(){
+        List<String> types = new ArrayList<String>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT DISTINCT " + T1_Col4 + " FROM " + Table1Name, null);
+       // Cursor cursor = db.rawQuery("SELECT DISTINCT * FROM " + Table1Name, null);
+
+        if (cursor.moveToFirst()) {
+            do {
+                types.add(cursor.getString(0));
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return types;
     }
 }
