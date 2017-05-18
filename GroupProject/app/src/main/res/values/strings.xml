@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">GroupProject</string>
+    <string name="app_name">Entertainment Finder</string>
+
+    <string name="townsTextViewText">Select an Town</string>
+    <string name="typeTextViewText">Select the Type of Entertainment</string>
+
+    <string name="aboutHeadingViewText">About</string>
+    <string name="aboutViewText">This application is made to help people find entertainment within their local area. </string>
+
+    <string name="searchButton">Search</string>
 </resources>

@@ -51,10 +51,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    //Loads the Towns into the TownsSpinner
     private void loadTownsSpinnerData() {
         List<String> towns = db.getAllTownsT1();
 
-        ArrayAdapter<String> townsDataAdapter = new ArrayAdapter<String>(this,
+        ArrayAdapter<String> townsDataAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_item, towns);
 
         townsDataAdapter
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         townsSpinner.setAdapter(townsDataAdapter);
     }
 
+    //Loads the Types of Entertainment into the TypesSpinner
     private void loadTtypeSpinnerData() {
         List<String> types = db.getAllTypesT1();
 

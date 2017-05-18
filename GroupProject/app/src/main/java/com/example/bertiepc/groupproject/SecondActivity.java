@@ -1,15 +1,18 @@
 package com.example.bertiepc.groupproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
+import android.view.Gravity;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -42,11 +45,17 @@ public class SecondActivity extends AppCompatActivity {
         ArrayList<String> placeNameList = new ArrayList<>();
 
         Cursor data = db.getPlaces(selectedTown,selectedType);
+        if (data.getCount() == 0){
+            Toast toast = Toast.makeText(getApplicationContext(), "There are no "+selectedType+" in "+selectedTown,
+                    Toast.LENGTH_LONG);
+            toast.show();
+        }else {
 
-        while (data.moveToNext()){
-            placeNameList.add("\n \n" + data.getString(1) + "\n \n" + data.getString(8) + "\n");
-            ListAdapter nameListAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, placeNameList);places.setAdapter(nameListAdapter);
+            while (data.moveToNext()) {
+                placeNameList.add("\n \n" + data.getString(1) + "\n \n" + data.getString(8) + "\n \n" + "Tel: " + data.getString(4) + "\n" + "Email: " + data.getString(5) + "\n" + "Website: " + data.getString(6) + "\n");
+                ListAdapter nameListAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, placeNameList);
+                places.setAdapter(nameListAdapter);
+            }
         }
-
     }
 }

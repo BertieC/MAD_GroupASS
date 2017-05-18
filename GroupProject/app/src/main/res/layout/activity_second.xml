@@ -19,7 +19,9 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentStart="true"
             android:layout_marginBottom="21dp"
+            android:backgroundTintMode="src_atop"
             android:footerDividersEnabled="true"
-            android:headerDividersEnabled="true" />
+            android:headerDividersEnabled="true"
+            android:scrollbars="horizontal" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

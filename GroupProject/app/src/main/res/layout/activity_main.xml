@@ -16,17 +16,15 @@
             android:id="@+id/selectTownSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="60dp" />
+            android:layout_below="@+id/townsTextView"
+            android:layout_alignParentStart="true" />
 
         <Spinner
             android:id="@+id/selectTypeSpinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_below="@+id/selectTownSpinner"
-            android:layout_marginTop="50dp" />
+            android:layout_below="@+id/typeTextView"
+            android:layout_alignParentStart="true" />
 
         <Button
             android:id="@+id/searchButton"
@@ -35,6 +33,49 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="22dp"
-            android:text="Search" />
+            android:text="@string/searchButton" />
+
+        <TextView
+            android:id="@+id/townsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="13dp"
+            android:layout_marginTop="30dp"
+            android:text="@string/townsTextViewText"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/typeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/townsTextView"
+            android:layout_below="@+id/selectTownSpinner"
+            android:layout_marginTop="30dp"
+            android:text="@string/typeTextViewText"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimaryDark"/>
+
+        <TextView
+            android:id="@+id/aboutHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/aboutHeadingViewText"
+            android:textSize="20dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_above="@+id/aboutTextView"
+            android:layout_alignStart="@+id/typeTextView" />
+
+        <TextView
+            android:id="@+id/aboutTextView"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:text="@string/aboutViewText"
+            android:layout_marginBottom="34dp"
+            android:layout_above="@+id/searchButton"
+            android:layout_centerHorizontal="true" />
+
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
